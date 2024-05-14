@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaEdit } from "react-icons/fa";
+import { AppContext } from './AppContext';
 
-const Budget = ({ value, setValue }) => {
+const Budget = () => {
+    const { budget, setBudget } = useContext(AppContext);
     const [editMode, setEditMode] = useState(false);
-    const [inputValue, setInputValue] = useState(0);
+    const [inputValue, setInputValue] = useState(budget);
 
     const handleEditClick = () => {
         setEditMode(true);
-        setInputValue(value);
+        setInputValue(budget);
     };
 
     const handleSaveClick = () => {
         setEditMode(false);
-        setValue(inputValue);
+        setBudget(inputValue);
     };
 
     const handleChange = (e) => {
@@ -32,7 +34,7 @@ const Budget = ({ value, setValue }) => {
                 </>
             ) : (
                 <>
-                    <span>Budget: Rs. {value}</span>
+                    <span>Budget: Rs. {budget}</span>
                     <FaEdit className="btn-info mx-2" role="button" onClick={handleEditClick} size='1rem' />
                 </>
             )}

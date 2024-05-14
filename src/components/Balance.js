@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from './AppContext';
 
-const Balance = ({ budget, totalSpent }) => {
-  const balanceLeft = 0;
+const Balance = () => {
+  const { budget, totalspent} = useContext(AppContext);
+  const balanceLeft = budget - totalspent;
   return (
     <div className='alert alert-success'>
       <span>Balance left: Rs. {balanceLeft}</span>

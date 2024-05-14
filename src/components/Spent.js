@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { AppContext } from './AppContext';
 
-const Spent = ({ expenses }) => {
-  const totalSpent = expenses.reduce((total, expense) => total + parseInt(expense.amount), 0);
+const Spent = () => {
+  const { totalspent } = useContext(AppContext);
 
   return (
     <div className='alert alert-dark'>
-      <span>Spent: Rs. {totalSpent}</span>
+      <span>Spent: Rs. {totalspent}</span>
     </div>
   );
 };

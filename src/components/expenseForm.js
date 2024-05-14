@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { AppContext } from './AppContext';
 
-const ExpenseForm = ({ addExpense, budget }) => {
+const ExpenseForm = () => {
+  const { budget, addExpense } = useContext(AppContext);
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
-
-  useEffect(() => {
-    setName('');
-    setAmount('');
-  }, [budget]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +17,7 @@ const ExpenseForm = ({ addExpense, budget }) => {
     const newExpense = {
       id: uuidv4(),
       name: name,
-      amount: +amount
+      amount: parseInt(amount)
     };
     addExpense(newExpense);
     setName('');
@@ -31,7 +28,7 @@ const ExpenseForm = ({ addExpense, budget }) => {
     <form onSubmit={handleSubmit} className="mb-3">
       <div className="row">
         <div className="col-md-4 mb-2">
-        <label htmlFor='name'>Name</label>
+          <label htmlFor='name'>Name</label>
           <input
             type="text"
             className="form-control"
@@ -40,7 +37,7 @@ const ExpenseForm = ({ addExpense, budget }) => {
           />
         </div>
         <div className="col-md-4 mb-2">
-        <label htmlFor='cost'>Amount</label>
+          <label htmlFor='cost'>Amount</label>
           <input
             type="number"
             className="form-control"
