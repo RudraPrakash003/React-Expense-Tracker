@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Expense Tracker Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple expense tracker application built with React, allowing users to manage their budget, track expenses, and view the remaining balance.
 
-## Available Scripts
+##Demo
+You can see the project in action by visiting the [live demo](https://rudraprakash003.github.io/React-Expense-Tracker/).
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Set Budget**: Users can set and update their budget.
+- **Add Expenses**: Users can add new expenses with names and amounts.
+- **View Expenses**: A list of all added expenses is displayed.
+- **Track Spending**: The total amount spent is calculated and displayed.
+- **Remaining Balance**: The remaining balance after deducting expenses from the budget is shown.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (version 14.x or later)
+- npm (version 6.x or later)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```
+   git clone https://rudraprakash003.github.io/React-Expense-Tracker/
+   cd expense-tracker
+   ```
+2. Install the dependencies:
+  ```
+  npm install
+  ```
+3. Start the development server:
+  ```
+  npm start
+  ```
+4. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###Setting the Budget
+1. Click on the edit icon next to the budget amount.
+2. Enter the desired budget value.
+3. Click the save button.
+   
+###Adding an Expense
+1. Fill in the expense name and amount in the provided fields.
+2. Click the "Add Expense" button.
+   
+###Viewing and Managing Expenses
+1. All expenses will be listed in the "Expenses List" section.
+2. The total amount spent is displayed in the "Spent" section.
+3. The remaining balance is shown in the "Balance" section.
+   
+##Contributing
 
-### `npm run eject`
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Make sure to follow the code style and include relevant tests.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Acknowledgments
+[Bootstrap](https://getbootstrap.com/) for styling
+[React](https://www.npmjs.com/package/react-icons) Icons for icons
+[uuid](https://www.npmjs.com/package/uuid) for generating unique IDs
