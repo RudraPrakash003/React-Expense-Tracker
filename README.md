@@ -26,7 +26,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1. Clone the repository:
    ```
-   git clone https://rudraprakash003.github.io/React-Expense-Tracker/
+   git clone https://github.com/RudraPrakash003/React-Expense-Tracker.git
    cd expense-tracker
    ```
 2. Install the dependencies:
@@ -38,9 +38,9 @@ Follow these instructions to get a copy of the project up and running on your lo
   npm start
   ```
 4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+  ```
+  http://localhost:3000
+  ```
 
 ## Usage
 
