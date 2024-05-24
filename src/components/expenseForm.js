@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { AppContext } from './AppContext';
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ showModal }) => {
   const { budget, addExpense, totalspent } = useContext(AppContext);
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
@@ -10,7 +10,7 @@ const ExpenseForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (budget === 0) {
-      alert("Please set a budget before adding expenses.");
+      showModal("Please set a budget before adding expenses.");
       return;
     }
     if (!name.trim() || !amount.trim()) return;
@@ -19,28 +19,23 @@ const ExpenseForm = () => {
       name: name,
       amount: parseInt(amount)
     };
-    console.log(newExpense.amount);
-    if (budget - totalspent > 0) {
-      if (budget - newExpense.amount > 0) {
-      addExpense(newExpense);
-      setName('');
-      setAmount('');
-    }
-    if (budget - newExpense.amount < 1 || budget - newExpense.amount === 0) {
-      alert("You don't have enough balance");
-    }
-  }
+    if (newExpense.amount>0){
 
-    if(budget - totalspent < 1){
-      alert("You don't have enough balance");
+      if (budget - totalspent >= newExpense.amount) {
+        addExpense(newExpense);
+        setName('');
+        setAmount('');
+      } else {
+        showModal("You don't have enough balance");
+      }
+    };
     }
-  };
 
   return (
     <form onSubmit={handleSubmit} className="mb-3">
       <div className="row">
         <div className="col-md-4 mb-2">
-          <label htmlFor='name'>Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             className="form-control"
@@ -49,7 +44,7 @@ const ExpenseForm = () => {
           />
         </div>
         <div className="col-md-4 mb-2">
-          <label htmlFor='cost'>Amount</label>
+          <label htmlFor="cost">Amount</label>
           <input
             type="number"
             className="form-control"
