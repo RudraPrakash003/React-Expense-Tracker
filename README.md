@@ -30,17 +30,17 @@ Follow these instructions to get a copy of the project up and running on your lo
    cd expense-tracker
    ```
 2. Install the dependencies:
-  ```
-  npm install
-  ```
+   ```
+   npm install
+   ```
 3. Start the development server:
-  ```
-  npm start
-  ```
+   ```
+   npm start
+   ```
 4. Open your browser and navigate to:
-  ```
-  http://localhost:3000
-  ```
+   ```
+   http://localhost:3000
+   ```
 
 ## Usage
 
