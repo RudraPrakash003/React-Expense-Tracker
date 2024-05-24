@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { AppContext } from './AppContext';
 
 const ExpenseForm = () => {
-  const { budget, addExpense } = useContext(AppContext);
+  const { budget, addExpense, totalspent } = useContext(AppContext);
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
 
@@ -19,9 +19,21 @@ const ExpenseForm = () => {
       name: name,
       amount: parseInt(amount)
     };
-    addExpense(newExpense);
-    setName('');
-    setAmount('');
+    console.log(newExpense.amount);
+    if (budget - totalspent > 0) {
+      if (budget - newExpense.amount > 0) {
+      addExpense(newExpense);
+      setName('');
+      setAmount('');
+    }
+    if (budget - newExpense.amount < 1 || budget - newExpense.amount === 0) {
+      alert("You don't have enough balance");
+    }
+  }
+
+    if(budget - totalspent < 1){
+      alert("You don't have enough balance");
+    }
   };
 
   return (
